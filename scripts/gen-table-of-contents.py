@@ -44,7 +44,8 @@ with open(filename, "r", encoding="utf-8") as f:
 entries = [line.strip() for line in lines if line.strip().startswith("#")]
 
 # Remove the table of contents if it is present
-entries.remove("## Table of Contents")
+if x := "## Table of Contents" in entries:
+    entries.remove(x)
 
 if VERBOSE:
     pprint.pprint(entries)
@@ -62,6 +63,5 @@ for e in entries:
     else:
         print(f"- [{section_title}]({'#' + get_label(e.lstrip('#'))})")
 
-    print("---", end="\n\n")  #
-    print("<br/>")
-
+print("\n---", end="\n\n")  #
+print("<br/>")
