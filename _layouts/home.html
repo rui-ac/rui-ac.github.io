@@ -14,10 +14,12 @@ layout: default
       <h2>Recent Posts</h2>
       <ul>
         {%- for post in site.posts -%}
+        {% if post.visible != 0  %}
           <li>
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
             <span class="post-date">{{ post.date | date: "%B %-d, %Y" }}</span>
           </li>
+        {% endif %}
         {%- endfor -%}
       </ul>
     </div>
