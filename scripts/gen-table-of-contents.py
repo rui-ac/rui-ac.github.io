@@ -61,3 +61,7 @@ for e in entries:
         print(f"{'\t' * num_tabs} - [{section_title}]({'#' + get_label(e.lstrip('#'))})")
     else:
         print(f"- [{section_title}]({'#' + get_label(e.lstrip('#'))})")
+
+    print("---", end="\n\n")  #
+    print("<br/>")
+
