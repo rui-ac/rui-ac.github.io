@@ -44,7 +44,7 @@ with open(filename, "r", encoding="utf-8") as f:
 entries = [line.strip() for line in lines if line.strip().startswith("#")]
 
 # Remove the table of contents if it is present
-if x := "## Table of Contents" in entries:
+if (x := "## Table of Contents") in entries:
     entries.remove(x)
 
 if VERBOSE:
